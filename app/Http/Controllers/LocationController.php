@@ -12,8 +12,8 @@ class LocationController extends Controller
         return Inertia::render('Locations/Index');
     }
 
-    public function foto()
+    public function foto(Request $request)
     {
-        return Inertia::render('Locations/Create');
+        return $request->all();
     }
 }

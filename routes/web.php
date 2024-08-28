@@ -25,6 +25,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('locations', [LocationController::class, 'index'])->name('locations.index');
+Route::get('location', [LocationController::class, 'index'])->name('location.index');
+Route::post('location', [LocationController::class, 'foto'])->name('location.foto');
 
 require __DIR__.'/auth.php';

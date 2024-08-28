@@ -10,7 +10,7 @@
     const lon2 = ref(106.8204410667335); // Contoh koordinat sjP
     const jarak = ref(null); // Contoh koordinat sjP
     const error = ref('');
-    
+
     const startCamera = async () => {
     try {
         const stream = await navigator.mediaDevices.getUserMedia({ video: true });
@@ -81,10 +81,14 @@
         })
     }
 
-    onMounted(async () => {
+    onMounted( () => {
         getCoordinates();
         console.log(lat1.value, lat2.value, lon1.value, lon2.value);
+
+    setTimeout(async () => {
         jarak.value = await haver(lat1.value, lat2.value, lon1.value, lon2.value);
+    }, 1000);
+
         startCamera();
     })
 
